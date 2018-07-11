@@ -35,4 +35,15 @@ rawLogger.error('This is a error log');
 //will show only one alert becase the 'Security Manager' is only used for ERROR level and above
 rawLogger.info('This is an info');
 ```
-4. The `packages/alert-stream/alert-stream.js` file is a good, simple example on how to create a custom Stream
+4. The `packages/alert-stream/alert-stream.js` file is a good, simple example on how to create a custom Stream:
+```javascript
+export class AlertStream {
+    constructor(appName) {
+        this.appName = appName;
+    }
+
+    write(rec) {
+        alert(`[${rec.levelName}] ${this.appName}: ${rec.msg}`);
+    }
+}
+```
