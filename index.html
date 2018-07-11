@@ -1,47 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0;url=packages/demo-browser-bunyan" />
     <title>Demo Bunyan</title>
-    <script src="./node_modules/browser-bunyan/dist/browser-bunyan.min.js"></script>
-</head>
-
-<body>
-    Check your console out... 🖥
-    <script type="module">
-        import { AlertStream } from "./custom-streams/alert-stream/alert-stream.js";
-
-        let appName = 'User Manager';
-
-        let rawLogger = bunyan.createLogger({
-            name: 'raw',
-            src: true,
-            streams: [
-                {
-                    level: 'trace',
-                    stream: new AlertStream(appName),
-                }
-            ]
-        });
-        
-        //will show one alert
-        rawLogger.error('This is a error log');
-
-        rawLogger.addStream({
-            level: 'error',
-            stream: new AlertStream('Security Manager'),
-        });
-        
-        //will show two alerts (because I've added another AlertStream),
-        //but the second alert will be coming from the Security Manager,
-        //instead of the App Manager
-        rawLogger.error('This is a error log');
-
-        rawLogger.info('This is an info');
-    </script>
-</body>
-
+  </head>
+  <body>
+    <!--
+        ELEMENT API DOCUMENTATION SUPPORT COMING SOON
+        Visit demo/index.html to see live examples of your element running.
+        This page will automatically redirect you there when run in the browser
+        with `polymer serve`.
+      -->
+  </body>
 </html>
